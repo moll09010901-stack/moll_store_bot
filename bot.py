@@ -52,7 +52,7 @@ if ADMIN_IDS_TEXT:
 USP_IMAGE_PATH = "usp_ghosts.jpg"
 
 GOLD_PRICE_SOM = 100
-MARKET_PERCENT = Decimal("1.20")
+MARKET_PERCENT = Decimal("0.80")
 
 DB_NAME = "moll_store.db"
 
@@ -301,7 +301,7 @@ def calculate_market_price(gold_amount: int):
     + случайные копейки от 0.01 до 0.99
     """
 
-    base = Decimal(gold_amount) * MARKET_PERCENT
+    base = Decimal(gold_amount) / MARKET_PERCENT
 
     kopecks = Decimal(random.randint(1, 99)) / Decimal(100)
 
